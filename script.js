@@ -1,4 +1,3 @@
-
 const products = [
   // Men's products
   { id: 1, name: 'Men\'s Shirt', price: 20, category: 'men', image: 'img/men-shirt.jpg' },
