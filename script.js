@@ -48,7 +48,7 @@ function loadProducts() {
     card.innerHTML = `
       <img src="${product.image}">
       <h3>${product.name}</h3>
-      <p>Rs.${product.price}</p>
+      <p>₹${product.price}</p>
       <button id="add-to-cart">Add to Cart</button>
     `;
 
@@ -96,12 +96,12 @@ function loadCart() {
     div.innerHTML = `
       <img src="${item.image}" width="60">
       <h3>${item.name}</h3>
-      <p>Rs.${item.price}</p>
+      <p>₹${item.price}</p>
     `;
     cartItems.appendChild(div);
   });
 
-  if (totalElement) totalElement.innerText = "Total: Rs." + total;
+  if (totalElement) totalElement.innerText = "Total: ₹" + total;
 }
 
 
@@ -121,7 +121,7 @@ function clearCart() {
 
   
   const totalElement = document.getElementById("cart-total");
-  if (totalElement) totalElement.innerText = "Total: $0";
+  if (totalElement) totalElement.innerText = "Total: ₹0";
 
   
   updateCartCount();
