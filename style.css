@@ -14,6 +14,7 @@ body {
 .navbar {
   width: 100%;
   background-color: #333;
+  width: 98%;
   color: #fff;
   padding: 1em;
   display: flex;
@@ -264,6 +265,7 @@ body {
     margin-right: 0;
     margin-bottom: 20px;
   }
+<<<<<<< HEAD
 
   .product img {
     width: 200px;
@@ -318,3 +320,6 @@ body {
     height: 150px;
   }
 }
+=======
+}
+>>>>>>> 2cbf3f40ebfa9df69ce964715f49ac60874d667f

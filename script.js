@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+=======
+>>>>>>> 2cbf3f40ebfa9df69ce964715f49ac60874d667f
 const products = [
   
   { id: 1, name: 'Men\'s Shirt', price: 400, category: 'men', image: 'img/men-shirt.jpg' },
