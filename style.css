@@ -12,9 +12,8 @@ body {
 }
 
 .navbar {
-  width: 100%;
+  max-width: 1800px;
   background-color: #333;
-  width: 98%;
   color: #fff;
   padding: 1em;
   display: flex;
