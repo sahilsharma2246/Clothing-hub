@@ -87,24 +87,37 @@ function loadCart() {
 
   if (!cartItems) return;
 
-  cartItems.innerHTML = ""; 
+  cartItems.innerHTML = "";
 
   let total = 0;
-  cart.forEach(item => {
+
+  cart.forEach((item, index) => {
     total += item.price;
+
     const div = document.createElement("div");
+    div.classList.add("cart-item");
+
     div.innerHTML = `
       <img src="${item.image}" width="60">
       <h3>${item.name}</h3>
       <p>₹${item.price}</p>
+      <button onclick="removeItem(${index})">Remove</button>
     `;
+
     cartItems.appendChild(div);
   });
 
   if (totalElement) totalElement.innerText = "Total: ₹" + total;
 }
 
+function removeItem(index) {
+  cart.splice(index, 1); 
 
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  loadCart();
+  updateCartCount();
+}
 
 function clearCart() {
  
