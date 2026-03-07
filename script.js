@@ -40,13 +40,20 @@ const products = [
   { id: 30, name: 'Kids\' Hat', price: 300, category: 'kids', image: 'img/kids-hats.jpg' },
 ];
 
+function preloadImages() {
+  products.forEach(product => {
+    const img = new Image();
+    img.src = product.image;
+  });
+}
+
 function loadProducts() {
   products.forEach(product => {
     const card = document.createElement("div");
     card.classList.add("product");
 
     card.innerHTML = `
-      <img src="${product.image}">
+      <img src="${product.image}" loading="lazy">
       <h3>${product.name}</h3>
       <p>₹${product.price}</p>
       <button id="add-to-cart">Add to Cart</button>
@@ -98,7 +105,7 @@ function loadCart() {
     div.classList.add("cart-item");
 
     div.innerHTML = `
-      <img src="${item.image}" width="60">
+      <img src="${item.image}" width="60" loading="lazy">
       <h3>${item.name}</h3>
       <p>₹${item.price}</p>
       <button onclick="removeItem(${index})">Remove</button>
@@ -140,7 +147,7 @@ function clearCart() {
   updateCartCount();
 }
 
-
+preloadImages();
 loadProducts();
 loadCart();
 updateCartCount();
